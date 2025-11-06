@@ -1,351 +1,637 @@
+/**
+ * TileCraft Game Styles
+ * Enhanced with better mobile support and infinite tile colors
+ */
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
-            -webkit-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
 
-        body {
-            background: linear-gradient(135deg, #faf8ef 0%, #f5e9d8 100%);
-            color: #776e65;
-            min-height: 100vh;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding: 10px;
-            overflow-x: hidden;
-        }
+body {
+    background: linear-gradient(135deg, #faf8ef 0%, #f5e9d8 100%);
+    color: #776e65;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    overflow-x: hidden;
+}
 
-        .container {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+/* ============================================
+   LAYOUT STRUCTURE
+   ============================================ */
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
 
-        h1 {
-            font-size: clamp(30px, 8vw, 60px);
-            font-weight: bold;
-            background: linear-gradient(135deg, #776e65 0%, #8f7a66 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+/* ============================================
+   HEADER SECTION
+   ============================================ */
 
-        .scores {
-            display: flex;
-            gap: 8px;
-        }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
-        .score-box {
-            background: linear-gradient(135deg, #bbada0 0%, #a89789 100%);
-            color: white;
-            padding: 5px 8px;
-            border-radius: 6px;
-            text-align: center;
-            min-width: 60px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+h1 {
+    font-size: clamp(28px, 8vw, 60px);
+    font-weight: bold;
+    background: linear-gradient(135deg, #776e65 0%, #8f7a66 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .score-title {
-            font-size: 10px;
-            text-transform: uppercase;
-            display: block;
-            color: #eee4da;
-            font-weight: bold;
-        }
+/* ============================================
+   SCORE DISPLAYS
+   ============================================ */
 
-        #score, #best-score, #moves {
-            font-size: 16px;
-            font-weight: bold;
-            display: block;
-            margin-top: 2px;
-        }
+.scores {
+    display: flex;
+    gap: 6px;
+}
 
-        .stats {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
+.score-box {
+    background: linear-gradient(135deg, #bbada0 0%, #a89789 100%);
+    color: white;
+    padding: 4px 7px;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 55px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-        .stat-item {
-            background: white;
-            padding: 5px 8px;
-            border-radius: 5px;
-            font-size: 11px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
+.score-title {
+    font-size: 9px;
+    text-transform: uppercase;
+    display: block;
+    color: #eee4da;
+    font-weight: bold;
+}
 
-        .stat-item strong {
-            color: #8f7a66;
-        }
+#score, #best-score, #moves {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-top: 2px;
+}
 
-        .controls {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
+/* ============================================
+   STATISTICS BAR
+   ============================================ */
 
-        .mode-selector {
-            display: flex;
-            background: white;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            flex: 1;
-            min-width: 150px;
-        }
+.stats {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
 
-        .mode-btn {
-            background: white;
-            color: #776e65;
-            border: none;
-            padding: 6px 10px;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.2s;
-            flex: 1;
-        }
+.stat-item {
+    background: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 70px;
+    justify-content: center;
+}
 
-        .mode-btn.active {
-            background: #8f7a66;
-            color: white;
-        }
+.stat-item strong {
+    color: #8f7a66;
+}
 
-        button {
-            background: linear-gradient(135deg, #8f7a66 0%, #7a6857 100%);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            padding: 8px 12px;
-            font-size: 13px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.2s;
-            touch-action: manipulation;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
+/* ============================================
+   CONTROL BUTTONS
+   ============================================ */
 
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
-        }
+.controls {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
 
-        button:active {
-            transform: translateY(0);
-        }
+.mode-selector {
+    display: flex;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 140px;
+}
 
-        .game-container {
-            position: relative;
-            background: linear-gradient(135deg, #bbada0 0%, #a89789 100%);
-            border-radius: 10px;
-            padding: 10px;
-            touch-action: none;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            margin-bottom: 10px;
-        }
+.mode-btn {
+    background: white;
+    color: #776e65;
+    border: none;
+    padding: 8px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            position: relative;
-        }
+.mode-btn.active {
+    background: #8f7a66;
+    color: white;
+}
 
-        .grid.size-5 {
-            grid-template-columns: repeat(5, 1fr);
-            gap: 8px;
-        }
+button {
+    background: linear-gradient(135deg, #8f7a66 0%, #7a6857 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    touch-action: manipulation;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
 
-        .grid.size-6 {
-            grid-template-columns: repeat(6, 1fr);
-            gap: 6px;
-        }
+button:active {
+    transform: scale(0.95);
+}
 
-        .grid-cell {
-            aspect-ratio: 1;
-            background: rgba(238, 228, 218, 0.35);
-            border-radius: 6px;
-        }
+/* ============================================
+   POWER-UP BUTTONS
+   ============================================ */
 
-        .tile {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: all 0.15s ease;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
+.powerup-container {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
 
-        .tile-2 { background: linear-gradient(135deg, #eee4da 0%, #e5dbc8 100%); color: #776e65; }
-        .tile-4 { background: linear-gradient(135deg, #ede0c8 0%, #e4d7b6 100%); color: #776e65; }
-        .tile-8 { background: linear-gradient(135deg, #f2b179 0%, #eda76a 100%); color: white; }
-        .tile-16 { background: linear-gradient(135deg, #f59563 0%, #f08b54 100%); color: white; }
-        .tile-32 { background: linear-gradient(135deg, #f67c5f 0%, #f17250 100%); color: white; }
-        .tile-64 { background: linear-gradient(135deg, #f65e3b 0%, #f1542c 100%); color: white; }
-        .tile-128 { background: linear-gradient(135deg, #edcf72 0%, #e8c563 100%); color: white; }
-        .tile-256 { background: linear-gradient(135deg, #edcc61 0%, #e8c252 100%); color: white; }
-        .tile-512 { background: linear-gradient(135deg, #edc850 0%, #e8be41 100%); color: white; }
-        .tile-1024 { background: linear-gradient(135deg, #edc53f 0%, #e8bb30 100%); color: white; }
-        .tile-2048 { background: linear-gradient(135deg, #edc22e 0%, #e8b81f 100%); color: white; }
-        .tile-4096 { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%); color: white; }
-        .tile-8192 { background: linear-gradient(135deg, #ff5252 0%, #ee4141 100%); color: white; }
-        .tile-super { background: linear-gradient(135deg, #3c3a32 0%, #2d2b23 100%); color: white; }
+.powerup-btn {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    padding: 8px 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    flex: 1;
+    min-width: 80px;
+    justify-content: center;
+}
 
-        @keyframes pop {
-            0% { transform: scale(0.8); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
+.powerup-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
-        .tile-new {
-            animation: pop 0.2s ease;
-        }
+.powerup-count {
+    background: rgba(255,255,255,0.3);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
 
-        .game-over, .win-message {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            z-index: 100;
-            backdrop-filter: blur(5px);
-        }
+/* ============================================
+   TIMER DISPLAY
+   ============================================ */
 
-        .game-over {
-            background: rgba(238, 228, 218, 0.9);
-        }
+.timer {
+    background: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-        .win-message {
-            background: rgba(237, 194, 46, 0.9);
-        }
+/* ============================================
+   GAME BOARD
+   ============================================ */
 
-        .game-over.show, .win-message.show {
-            display: flex;
-        }
+.game-container {
+    position: relative;
+    background: linear-gradient(135deg, #bbada0 0%, #a89789 100%);
+    border-radius: 10px;
+    padding: 10px;
+    touch-action: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    margin-bottom: 10px;
+}
 
-        .game-over p, .win-message p {
-            font-size: clamp(40px, 10vw, 60px);
-            font-weight: bold;
-            color: #776e65;
-            margin-bottom: 10px;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    position: relative;
+}
 
-        .win-message p {
-            color: #f9f6f2;
-        }
+.grid.size-5 {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
 
-        .message-stats {
-            font-size: 16px;
-            margin-bottom: 20px;
-            text-align: center;
-            line-height: 1.6;
-        }
+.grid.size-6 {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+}
 
-        .button-group {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+.grid-cell {
+    aspect-ratio: 1;
+    background: rgba(238, 228, 218, 0.35);
+    border-radius: 6px;
+}
 
-        .instructions {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 13px;
-            color: #776e65;
-            opacity: 0.8;
-            line-height: 1.5;
-        }
+/* ============================================
+   TILE STYLING - Enhanced for Better Visibility
+   ============================================ */
 
-        .powerup-container {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
+.tile {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
 
-        .powerup-btn {
-            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
-            padding: 8px 12px;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            position: relative;
-        }
+/* Base tiles with high contrast */
+.tile-2 { 
+    background: linear-gradient(135deg, #eee4da 0%, #ede0c8 100%); 
+    color: #776e65;
+    text-shadow: none;
+}
 
-        .powerup-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
+.tile-4 { 
+    background: linear-gradient(135deg, #ede0c8 0%, #ecd9b6 100%); 
+    color: #776e65;
+    text-shadow: none;
+}
 
-        .powerup-count {
-            background: rgba(255,255,255,0.3);
-            padding: 2px 6px;
-            border-radius: 10px;
-            font-size: 11px;
-        }
+.tile-8 { 
+    background: linear-gradient(135deg, #f2b179 0%, #f5a963 100%); 
+    color: #f9f6f2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
 
-        .timer {
-            background: #e74c3c;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 6px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+.tile-16 { 
+    background: linear-gradient(135deg, #f59563 0%, #f78854 100%); 
+    color: #f9f6f2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
 
-        .combo-indicator {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: #3498db;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 13px;
-            font-weight: bold;
-            animation: bounce 0.5s ease;
-            display: none;
-        }
+.tile-32 { 
+    background: linear-gradient(135deg, #f67c5f 0%, #f96f4e 100%); 
+    color: #f9f6f2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
 
-        .combo-indicator.show {
-            display: block;
-        }
+.tile-64 { 
+    background: linear-gradient(135deg, #f65e3b 0%, #f9512a 100%); 
+    color: #f9f6f2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
+.tile-128 { 
+    background: linear-gradient(135deg, #edcf72 0%, #edc850 100%); 
+    color: #f9f6f2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-size: 0.9em;
+}
 
-        @media (max-width: 500px) {
-            .stat-item {
-                font-size: 11px;
-                padding: 6px 10px;
-            }
-        }
+.tile-256 { 
+    background: linear-gradient(135deg, #edcc61 0%, #edc22e 100%); 
+    color: #f9f6f2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-size: 0.9em;
+}
+
+.tile-512 { 
+    background: linear-gradient(135deg, #edc850 0%, #edbf22 100%); 
+    color: #f9f6f2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-size: 0.9em;
+}
+
+.tile-1024 { 
+    background: linear-gradient(135deg, #edc53f 0%, #edb710 100%); 
+    color: #f9f6f2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    font-size: 0.85em;
+}
+
+.tile-2048 { 
+    background: linear-gradient(135deg, #edc22e 0%, #edaf10 100%); 
+    color: #f9f6f2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    font-size: 0.85em;
+    box-shadow: 0 4px 12px rgba(237, 194, 46, 0.5);
+}
+
+/* Extended tiles for infinite gameplay */
+.tile-4096 { 
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%); 
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 0.8em;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.5);
+}
+
+.tile-8192 { 
+    background: linear-gradient(135deg, #ff5252 0%, #ee4141 100%); 
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 0.8em;
+    box-shadow: 0 4px 12px rgba(255, 82, 82, 0.5);
+}
+
+.tile-16384 { 
+    background: linear-gradient(135deg, #e040fb 0%, #d500f9 100%); 
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 0.75em;
+    box-shadow: 0 4px 12px rgba(224, 64, 251, 0.5);
+}
+
+.tile-32768 { 
+    background: linear-gradient(135deg, #7c4dff 0%, #651fff 100%); 
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 0.75em;
+    box-shadow: 0 4px 12px rgba(124, 77, 255, 0.5);
+}
+
+.tile-65536 { 
+    background: linear-gradient(135deg, #2979ff 0%, #2962ff 100%); 
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 0.7em;
+    box-shadow: 0 4px 12px rgba(41, 121, 255, 0.5);
+}
+
+.tile-131072 { 
+    background: linear-gradient(135deg, #00e5ff 0%, #00b8d4 100%); 
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    font-size: 0.65em;
+    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.5);
+}
+
+/* Super tiles (262144+) */
+.tile-super { 
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%); 
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    font-size: 0.6em;
+    box-shadow: 0 4px 12px rgba(26, 35, 126, 0.7);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes pop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.tile-new {
+    animation: pop 0.2s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        box-shadow: 0 4px 12px rgba(26, 35, 126, 0.7);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 4px 20px rgba(26, 35, 126, 1);
+        transform: scale(1.02);
+    }
+}
+
+/* ============================================
+   MILESTONE NOTIFICATION
+   ============================================ */
+
+.milestone-notification {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    border-radius: 15px;
+    padding: 20px 30px;
+    z-index: 150;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.milestone-notification.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.milestone-content {
+    text-align: center;
+}
+
+.milestone-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8f7a66;
+    margin-bottom: 10px;
+}
+
+.milestone-value {
+    font-size: 48px;
+    font-weight: bold;
+    color: #f67c5f;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.milestone-next {
+    font-size: 16px;
+    color: #776e65;
+}
+
+.milestone-next span {
+    font-weight: bold;
+    color: #8f7a66;
+}
+
+/* ============================================
+   COMBO INDICATOR
+   ============================================ */
+
+.combo-indicator {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: #3498db;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    animation: bounce 0.5s ease;
+    display: none;
+    z-index: 10;
+}
+
+.combo-indicator.show {
+    display: block;
+}
+
+/* ============================================
+   GAME OVER / WIN OVERLAYS
+   ============================================ */
+
+.game-over, .win-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.game-over {
+    background: rgba(238, 228, 218, 0.95);
+}
+
+.win-message {
+    background: rgba(237, 194, 46, 0.95);
+}
+
+.game-over.show, .win-message.show {
+    display: flex;
+}
+
+.game-over p, .win-message p {
+    font-size: clamp(35px, 10vw, 60px);
+    font-weight: bold;
+    color: #776e65;
+    margin-bottom: 10px;
+}
+
+.win-message p {
+    color: #f9f6f2;
+}
+
+.message-stats {
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ============================================
+   INSTRUCTIONS
+   ============================================ */
+
+.instructions {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #776e65;
+    opacity: 0.8;
+    line-height: 1.5;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 500px) {
+    body {
+        padding: 8px;
+    }
+    
+    .stat-item {
+        font-size: 10px;
+        padding: 5px 6px;
+        min-width: 65px;
+    }
+    
+    .controls button {
+        font-size: 11px;
+        padding: 8px 8px;
+    }
+    
+    .milestone-value {
+        font-size: 40px;
+    }
+    
+    .milestone-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    h1 {
+        font-size: 24px;
+    }
+    
+    .score-box {
+        min-width: 50px;
+        padding: 3px 5px;
+    }
+    
+    .score-title {
+        font-size: 8px;
+    }
+    
+    #score, #best-score, #moves {
+        font-size: 12px;
+    }
+}

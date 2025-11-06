@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#faf8ef">
     <title>TileCraft</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,7 +12,7 @@
     <div class="container">
         <!-- Header with title and score displays -->
         <div class="header">
-            <h1>2048+</h1>
+            <h1>TileCraft</h1>
             <div class="scores">
                 <div class="score-box">
                     <span class="score-title">SCORE</span>
@@ -34,6 +35,9 @@
                 <strong>Highest:</strong> <span id="highest-tile">2</span>
             </div>
             <div class="stat-item">
+                <strong>Target:</strong> <span id="target-tile">2048</span>
+            </div>
+            <div class="stat-item">
                 <strong>Merges:</strong> <span id="merges">0</span>
             </div>
             <div class="stat-item">
@@ -44,25 +48,25 @@
         <!-- Game mode controls and action buttons -->
         <div class="controls">
             <div class="mode-selector">
-                <button class="mode-btn active" data-size="4">4x4</button>
-                <button class="mode-btn" data-size="5">5x5</button>
-                <button class="mode-btn" data-size="6">6x6</button>
+                <button class="mode-btn active" data-size="4">4×4</button>
+                <button class="mode-btn" data-size="5">5×5</button>
+                <button class="mode-btn" data-size="6">6×6</button>
             </div>
-            <button id="timed-mode">⏱️ Timed Mode</button>
-            <button id="new-game">🔄 New Game</button>
+            <button id="timed-mode">⏱️ Timed</button>
+            <button id="new-game">🔄 New</button>
             <button id="undo-btn">↶ Undo</button>
         </div>
 
         <!-- Power-up buttons -->
         <div class="powerup-container">
             <button class="powerup-btn" id="shuffle-btn">
-                🔀 Shuffle <span class="powerup-count" id="shuffle-count">3</span>
+                🔀 <span class="powerup-count" id="shuffle-count">3</span>
             </button>
             <button class="powerup-btn" id="remove-btn">
-                🗑️ Remove <span class="powerup-count" id="remove-count">2</span>
+                🗑️ <span class="powerup-count" id="remove-count">2</span>
             </button>
             <button class="powerup-btn" id="bomb-btn">
-                💣 Bomb <span class="powerup-count" id="bomb-count">2</span>
+                💣 <span class="powerup-count" id="bomb-count">2</span>
             </button>
         </div>
 
@@ -78,15 +82,24 @@
                 🔥 Combo x<span id="combo-mult">2</span>
             </div>
             
+            <!-- Milestone notification -->
+            <div class="milestone-notification" id="milestone-notification">
+                <div class="milestone-content">
+                    <p class="milestone-title">🎉 Milestone Reached!</p>
+                    <p class="milestone-value" id="milestone-value">2048</p>
+                    <p class="milestone-next">Next target: <span id="milestone-next">4096</span></p>
+                </div>
+            </div>
+            
             <!-- Grid where tiles are rendered -->
             <div class="grid" id="grid"></div>
             
             <!-- Win message overlay -->
             <div class="win-message">
-                <p>🎉 You Win!</p>
+                <p>🎉 Milestone!</p>
                 <div class="message-stats" id="win-stats"></div>
                 <div class="button-group">
-                    <button id="keep-going">Keep going</button>
+                    <button id="keep-going">Keep Playing</button>
                     <button id="new-game-win">New Game</button>
                 </div>
             </div>
@@ -102,7 +115,7 @@
         <!-- Instructions -->
         <div class="instructions">
             <strong>Desktop:</strong> Arrow keys or WASD | <strong>Mobile:</strong> Swipe<br>
-            <strong>Goal:</strong> Reach 2048 (or beyond!)
+            <strong>Goal:</strong> Reach milestones and keep going!
         </div>
     </div>
 
